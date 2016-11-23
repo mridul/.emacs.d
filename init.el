@@ -30,10 +30,12 @@
 (defvar mridul/packages '(ac-slime
                           auto-complete
                           autopair
+                          elpy
                           feature-mode
                           flycheck
                           gist
                           htmlize
+			  jedi
                           magit
                           markdown-mode
                           marmalade
@@ -41,6 +43,7 @@
                           restclient
                           sml-mode
                           solarized-theme
+                          sphinx-doc
                           web-mode
                           writegood-mode
                           yaml-mode)
@@ -187,3 +190,18 @@
 ;; (add-to-list 'default-frame-alist '(font . 'Consolas ))
 ;; (set-face-attribute 'default t :font 'Consolas )
 (set-default-font "Consolas-13")
+
+;; python elpy mode
+(elpy-enable)
+
+;; sphinx-doc for python docstrings
+(add-hook 'python-mode-hook (lambda ()
+                              (require 'sphinx-doc)
+                              (sphinx-doc-mode t)))
+
+;; tramp settings
+(setq tramp-default-method "ssh")
+
+;; jedi mode settings for python autocomplete
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)
