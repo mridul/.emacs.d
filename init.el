@@ -31,11 +31,12 @@
                           auto-complete
                           autopair
                           elpy
+                          exec-path-from-shell
                           feature-mode
                           flycheck
                           gist
                           htmlize
-			  jedi
+                          jedi
                           magit
                           markdown-mode
                           marmalade
@@ -201,6 +202,10 @@
 
 ;; tramp settings
 (setq tramp-default-method "ssh")
+
+;; path and other environment variables from shell
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
 
 ;; jedi mode settings for python autocomplete
 (add-hook 'python-mode-hook 'jedi:setup)
