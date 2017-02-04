@@ -27,26 +27,16 @@
 
 
 ;; default packages
-(defvar mridul/packages '(ac-slime
-                          auto-complete
-                          autopair
+(defvar mridul/packages '(auto-complete
                           elpy
                           exec-path-from-shell
-                          feature-mode
                           flycheck
-                          gist
-                          htmlize
                           jedi
-                          magit
                           markdown-mode
                           marmalade
                           org
-                          restclient
-                          sml-mode
                           solarized-theme
                           sphinx-doc
-                          web-mode
-                          writegood-mode
                           yaml-mode)
   "Default packages")
 
@@ -107,9 +97,6 @@
 (add-hook 'org-mode-hook
           (lambda ()
             (flyspell-mode)))
-(add-hook 'org-mode-hook
-          (lambda ()
-            (writegood-mode)))
 
 ;; ido-mode
 (ido-mode t)
@@ -177,7 +164,6 @@
   (load-theme 'wombat t))
 
 ;; tex
-(load "auctex.el" nil t t)
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
 (setq-default TeX-master nil)
