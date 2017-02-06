@@ -173,7 +173,7 @@
 (setq markdown-css-paths `(,(expand-file-name "markdown.css" mridul/vendor-dir)))
 
 (if window-system
-    (load-theme 'solarized-dark t)
+    (load-theme 'solarized-light t)
   (load-theme 'wombat t))
 
 ;; tex
